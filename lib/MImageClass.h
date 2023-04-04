@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <utility>
 #include <vector>
 #include <cstring>
 #include <cmath>
@@ -58,15 +59,15 @@ public:
 
 
 // define pixel vector
-typedef vector<vector<Pixel>> PixelMatrix;
+typedef vector<vector<Pixel> > PixelMatrix;
 
 class MImageClass {
 private:
     int maxValue;
     PixelMatrix pixels;
 public:
-    MImageClass(const string&);
-    MImageClass(int mv, PixelMatrix p): maxValue(mv), pixels(p){}
+    explicit MImageClass(const string&);
+    MImageClass(int mv, PixelMatrix p): maxValue(mv), pixels(std::move(p)){}
     bool isValid();
     MImageClass negative();
     void save(const string&);

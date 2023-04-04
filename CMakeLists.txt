@@ -7,4 +7,4 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY build)
 
 include_directories(images)
 
-add_executable(blockapps main.cpp lib/MImageClass.cpp lib/MImageClass.h)
+add_executable(blockapps main.cpp lib/MImageClass.h lib/MImageClass.cpp)
